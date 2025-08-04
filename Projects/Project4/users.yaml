@@ -1,0 +1,7 @@
+users:
+  - username: Luffy
+    roles: [AmazonEC2FullAccess]
+  - username: Zoro
+    roles: [AmazonS3ReadOnlyAccess]
+  - username: Sanji
+    roles: [AmazonS3ReadOnlyAccess, AmazonEC2FullAccess]
