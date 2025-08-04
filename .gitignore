@@ -36,6 +36,8 @@ terraform.rc
 *.pem
 *.key
 *.pub
+terra-key*
+*terra-key*
 
 # Environment variables
 .env
