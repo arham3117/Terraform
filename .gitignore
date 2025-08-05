@@ -1,59 +1,201 @@
-# Terraform state files
+# ==============================================================================
+# TERRAFORM SENSITIVE FILES
+# ==============================================================================
+
+# Terraform state files - CRITICAL: contain infrastructure state and secrets
 *.tfstate
 *.tfstate.*
+*.tfstate.backup
 
-# Crash log files
-crash.log
-crash.*.log
+# Terraform plan files - may contain sensitive data
+*tfplan*
+*.tfplan
 
-# Exclude all .tfvars files, which are likely to contain sensitive data
+# Terraform variable files - often contain secrets, API keys, passwords
 *.tfvars
 *.tfvars.json
+terraform.tfvars*
+*.auto.tfvars*
 
-# Ignore override files as they are usually used to override resources locally
+# Terraform override files - may contain sensitive local configurations
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Include override files you do wish to add to version control using negated pattern
-# !example_override.tf
-
-# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
-*tfplan*
-
-# Ignore CLI configuration files
+# Terraform directories and lock files
+.terraform/
+.terraform.lock.hcl
 .terraformrc
 terraform.rc
 
-# Terraform lock files
-.terraform.lock.hcl
+# Terraform crash logs
+crash.log
+crash.*.log
 
-# Terraform modules directory
-.terraform/
+# ==============================================================================
+# SSH KEYS AND CERTIFICATES - CRITICAL SECURITY
+# ==============================================================================
 
-# SSH keys
+# All SSH key formats
 *.pem
 *.key
 *.pub
+*.ppk
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.csr
+
+# Project-specific SSH keys
 terra-key*
 *terra-key*
+arh-terra-key*
+*arh-terra-key*
+*-key
+*-key.*
+*_key
+*_key.*
+id_rsa*
+id_ed25519*
+id_ecdsa*
+
+# AWS credentials and certificates
+*.credentials
+aws-credentials*
+*aws-credentials*
+
+# ==============================================================================
+# ANSIBLE SENSITIVE FILES
+# ==============================================================================
+
+# Ansible vault files
+vault.yml
+*vault*
+*.vault
+
+# Ansible backup files
+*.backup*
+*/backup/
+
+# Ansible logs
+ansible.log
+*.log
+
+# ==============================================================================
+# ENVIRONMENT AND CONFIG FILES
+# ==============================================================================
 
 # Environment variables
 .env
-.env.local
-.env.*.local
+.env.*
+.environment
+*.env
+config.json
+secrets.json
+settings.json
 
-# Temporary files
-*.tmp
-*.bak
+# Configuration files that may contain secrets
+config/
+secrets/
+credentials/
+auth/
 
-# IDE files
+# ==============================================================================
+# CLOUD PROVIDER CREDENTIALS
+# ==============================================================================
+
+# AWS
+.aws/
+*aws*credentials*
+*AWS*credentials*
+
+# Azure
+.azure/
+
+# Google Cloud
+.gcloud/
+*gcp*credentials*
+service-account*.json
+*service-account*.json
+
+# ==============================================================================
+# DEVELOPMENT AND BUILD FILES
+# ==============================================================================
+
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+.sublime-*
 
-# OS files
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.orig
+*.backup
+.cache/
+tmp/
+temp/
+
+# Dependency directories
+node_modules/
+.npm/
+vendor/
+
+# ==============================================================================
+# OPERATING SYSTEM FILES
+# ==============================================================================
+
+# macOS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Windows
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ==============================================================================
+# LOGS AND MONITORING
+# ==============================================================================
+
+# Application logs
+logs/
+*.log
+*.log.*
+log/
+
+# Monitoring and metrics
+metrics/
+monitoring/
+
+# ==============================================================================
+# NOTES AND DOCUMENTATION DRAFTS
+# ==============================================================================
+
+# Personal notes and drafts (may contain sensitive info)
+NOTES.md
+TODO.md
+DRAFT.md
+notes/
+drafts/
+scratch/

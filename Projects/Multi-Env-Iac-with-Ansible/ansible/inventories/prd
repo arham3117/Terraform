@@ -1,0 +1,9 @@
+[servers]
+server1 ansible_host=52.14.142.201
+server2 ansible_host=3.21.104.172
+server3 ansible_host=3.139.235.84
+
+[servers:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/Users/arham/Documents/Projects/Terraform/Projects/Multi-Env-Iac-with-Ansible/terraform/arh-terra-key
+ansible_python_interpreter=/usr/bin/python3
