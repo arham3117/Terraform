@@ -101,7 +101,7 @@ EOF
 
 [servers:vars]
 ansible_user=ubuntu
-ansible_ssh_private_key_file=/Users/arham/Documents/Projects/Terraform/Projects/Multi-Env-Iac-with-Ansible/terraform/arh-terra-key
+ansible_ssh_private_key_file=path_to_your_private_key
 ansible_python_interpreter=/usr/bin/python3
 EOF
     
