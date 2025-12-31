@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cloud-hosted static website powered by AWS S3 and CloudFront">
+    <title>Cloud Static Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">CloudSite</h1>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Welcome to CloudSite</h2>
+                    <p class="subtitle">A modern static website hosted on AWS S3 and delivered through CloudFront</p>
+                    <button class="cta-button" onclick="scrollToSection('features')">Explore Features</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">⚡</div>
+                        <h3>Lightning Fast</h3>
+                        <p>Delivered through CloudFront CDN for optimal performance worldwide</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🔒</div>
+                        <h3>Secure</h3>
+                        <p>HTTPS enabled with Origin Access Control for enhanced security</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">☁️</div>
+                        <h3>Cloud Native</h3>
+                        <p>Powered by AWS infrastructure with 99.99% availability</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">💰</div>
+                        <h3>Cost Effective</h3>
+                        <p>Pay only for what you use with S3 storage and CloudFront delivery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About This Project</h2>
+                <div class="about-content">
+                    <p>This website is deployed using Terraform infrastructure as code (IaC) to provision AWS resources including:</p>
+                    <ul class="tech-list">
+                        <li><strong>Amazon S3:</strong> Static file storage with public access blocked</li>
+                        <li><strong>CloudFront:</strong> Global content delivery network with OAC</li>
+                        <li><strong>Terraform:</strong> Infrastructure automation and management</li>
+                        <li><strong>S3 Backend:</strong> Remote state storage for team collaboration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                    <div id="form-message" class="form-message"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CloudSite. Powered by AWS S3 & CloudFront.</p>
+            <p class="footer-tech">Built with Terraform | Deployed on AWS</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
